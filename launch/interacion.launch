@@ -1,0 +1,51 @@
+<launch>
+	<node pkg="interaccion" 
+		  name="interaccion_node_informacion_personal" 
+		  type="interaccion_node_informacion_personal" 
+		  respawn="true" 
+		  output="screen" 
+		  launch-prefix="xterm -e"/>
+
+	<node pkg="interaccion" 
+		  name="interaccion_node_emocion_usuario" 
+		  type="interaccion_node_emocion_usuario" 
+		  respawn="true" 
+		  output="screen" 
+		  launch-prefix="xterm -e"/>
+
+	<node pkg="interaccion" 
+		  name="interaccion_node_empaquetador" 
+		  type="interaccion_node_empaquetador" 
+		  respawn="true" 
+		  output="screen" 
+		  launch-prefix="xterm -e"/>
+
+	<node pkg="interaccion" 
+		  name="interaccion_node_posicion_usuario" 
+		  type="interaccion_node_posicion_usuario" 
+		  respawn="true" 
+		  output="screen" 
+		  launch-prefix="xterm -e"/>
+
+	<node pkg="interaccion" 
+		  name="interaccion_node_dialogo" 
+		  type="interaccion_node_dialogo" 
+		  respawn="true" 
+		  output="screen" 
+		  launch-prefix="xterm -e"/>
+
+	<node pkg="interaccion" 
+		  name="interaccion_node_matematico" 
+		  type="interaccion_node_matematico" 
+		  respawn="true" 
+		  output="screen" 
+		  launch-prefix="xterm -e"/>
+
+	<node pkg="interaccion" 
+		  name="interaccion_node_reloj" 
+		  type="interaccion_node_reloj" 
+		  respawn="true" 
+		  output="screen" 
+		  launch-prefix="xterm -e"/>
+
+</launch>
