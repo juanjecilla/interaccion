@@ -29,7 +29,11 @@ void funcionCallbackShowMessage(const interaccion::usuario::ConstPtr& msg){
 	ROS_INFO("Información personal:");
 	ROS_INFO("\tNombre: %s", msg->infPersonal.nombre.c_str());
 	ROS_INFO("\tEdad: %d", msg->infPersonal.edad);
-	ROS_INFO("\tIdiomas: %s", msg->infPersonal.idiomas[0].c_str());
+	ROS_INFO("\tIdiomas:");
+
+	for (int i = 0; i < msg->infPersonal.idiomas.size(); ++i){
+		ROS_INFO("\t\t%s", msg->infPersonal.idiomas[i].c_str());
+	}
 
 	ROS_INFO("Emocion: %s", msg->emocion.c_str());
 
@@ -38,8 +42,33 @@ void funcionCallbackShowMessage(const interaccion::usuario::ConstPtr& msg){
 	ROS_INFO("\tCoordenada Y: %d", msg->posicion.y);
 	ROS_INFO("\tCoordenada Z: %d", msg->posicion.z);
 
-	string text = "Hola Buntulu, ¿nos vamos para clase?";
+	stringstream textToSpeech;
+	string text;
+
+	textToSpeech << "Hola " 
+				 << msg->infPersonal.nombre.c_str() 
+				 << ", tienes " 
+				 << (int)msg->infPersonal.edad 
+				 << " años y hablas ";
+
+	for (int i = 0; i < msg->infPersonal.idiomas.size(); ++i){
+		textToSpeech << msg->infPersonal.idiomas[i].c_str() << " ";
+	}
+				 
+	textToSpeech << ". Estás muy " 
+				 << msg->emocion.c_str()
+				 << " en tus coordenasdas X:"
+				 << msg->posicion.x
+				 << ", Y:"
+				 << msg->posicion.y
+			     << ", Z:"
+				 << msg->posicion.z
+				 << ". Buenos días majete.";
+
+	text = textToSpeech.str();
+	ROS_INFO("TEXTO: %s", text.c_str());
 	string command = "espeak -v es \"" + text + "\"";
+	printf("COMMAND: %s", command.c_str());
 	system (command.c_str()); 
 
 	srv.request.entrada = msg->infPersonal.edad;

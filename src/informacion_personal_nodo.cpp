@@ -26,6 +26,7 @@ int main(int argc, char **argv){
 		string nombre;
 		string aux;
 		int edad;
+		int numIdiomas;
 		vector<string> idiomas;
 
 		interaccion::inf_personal_usuario message;
@@ -35,9 +36,16 @@ int main(int argc, char **argv){
 
 		cout << "Introduzca la edad del usuario" << endl;
 		cin >> edad;
-		cout << "Introduzca los idiomas que habla el usuario separados por comas:" << endl;
-		cin >> aux;
-		idiomas.push_back(aux);
+		cout << "¿Cuántos idiomas hablas?" << endl;
+		cin >> numIdiomas;
+
+		int i;
+		for (i = 0; i<numIdiomas; i++){
+			cout << "Introduce el idioma " << (i+1) << endl;
+			cin >> aux;
+			idiomas.push_back(aux);
+
+		}
 
 		message.nombre = nombre;
 		message.edad = edad;

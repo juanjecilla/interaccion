@@ -33,7 +33,9 @@ void funcionCallbackInfPersonalTopic(const interaccion::inf_personal_usuario::Co
 
 	ROS_INFO("Nombre: %s", msg->nombre.c_str());
 	ROS_INFO("Edad: %d", msg->edad);
-	ROS_INFO("Idiomas: %s", msg->idiomas[0].c_str());
+	for (int i = 0; i < msg->idiomas.size(); ++i){
+		ROS_INFO("Idiomas: %s", msg->idiomas[i].c_str());
+	}
 
 	user.infPersonal = *msg;
 	information_ready = true;

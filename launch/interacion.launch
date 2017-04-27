@@ -31,8 +31,7 @@
 		  name="interaccion_node_dialogo" 
 		  type="interaccion_node_dialogo" 
 		  respawn="true" 
-		  output="screen" 
-		  launch-prefix="xterm -e"/>
+		  output="screen"/>
 
 	<node pkg="interaccion" 
 		  name="interaccion_node_matematico" 
