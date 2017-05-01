@@ -42,7 +42,7 @@ int main(int argc, char **argv){
 		std_msgs::String emocion;
 
 		// Introduccion por teclado de la emocion del usuario
-		ROS_INFO("Introduzca la emocion del usuario:"):
+		ROS_INFO("Introduzca la emocion del usuario:");
 		cin >> emocion.data;
 
 		// El publicador manda el mensaje para que el empaquetador_nodo lo trate
