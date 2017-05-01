@@ -29,13 +29,13 @@ int main(int argc, char **argv){
 
 		interaccion::pos_usuario message;
 
-		cout << "Introduzca la coordenada X del usuario" << endl;
+		ROS_INFO("Introduzca la coordenada X del usuario:");
 		cin >> x;
 
-		cout << "Introduzca la coordenada Y del usuario" << endl;
+		ROS_INFO("Introduzca la coordenada Y del usuario:");
 		cin >> y;
 
-		cout << "Introduzca la coordenada Z del usuario" << endl;
+		ROS_INFO("Introduzca la coordenada Z del usuario:");
 		cin >> z;
 
 		message.x = x;
@@ -49,10 +49,7 @@ int main(int argc, char **argv){
 
 		seconds_sleep.sleep();
 
-		
 	}	
-
-
 
 	return 0;
 }

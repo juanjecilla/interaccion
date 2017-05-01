@@ -31,20 +31,18 @@ int main(int argc, char **argv){
 
 		interaccion::inf_personal_usuario message;
 
-		cout << "Introduzca el nombre del usuario" << endl;
+		ROS_INFO("Introduzca el nombre del usuario");
 		cin >> nombre;
-
-		cout << "Introduzca la edad del usuario" << endl;
+		ROS_INFO("Introduzca la edad del usuario");
 		cin >> edad;
-		cout << "¿Cuántos idiomas hablas?" << endl;
+		ROS_INFO("¿Cuántos idiomas hablas?");
 		cin >> numIdiomas;
 
 		int i;
 		for (i = 0; i<numIdiomas; i++){
-			cout << "Introduce el idioma " << (i+1) << endl;
+			ROS_INFO("Introduce el idioma %d", i+1);
 			cin >> aux;
 			idiomas.push_back(aux);
-
 		}
 
 		message.nombre = nombre;

@@ -24,7 +24,7 @@ int main(int argc, char **argv){
 		std_msgs::String emocion;
 
 
-		cout << "Introduzca la emocion del usuario" << endl;
+		ROS_INFO("Introduzca la emocion del usuario:"):
 		cin >> emocion.data;
 
 		publisher.publish(emocion);
