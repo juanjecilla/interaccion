@@ -1,4 +1,11 @@
+<!-- Fichero .launch que inicia los nodos listados a continuacion junto con el roscore -->
 <launch>
+	<!-- Nodo interaccion_node_informacion_personal perteneciente al paquete interaccion 
+		 que se corresponde con informacion_personal_nodo.cpp donde se introducen los datos
+		 del usuario. 
+		 Respawn = true para que se reinicie el nodo en caso de cerrarse
+		 Se utiliza xterm como terminal de comandos
+		 output = screen para que stdout y stderr se muestren por pantalla-->
 	<node pkg="interaccion" 
 		  name="interaccion_node_informacion_personal" 
 		  type="interaccion_node_informacion_personal" 
@@ -6,6 +13,12 @@
 		  output="screen" 
 		  launch-prefix="xterm -e"/>
 
+	<!-- Nodo interaccion_node_emocion_usuario perteneciente al paquete interaccion. 
+		 que se corresponde con emocion_usuario_nodo.cpp donde se introduce la emocion
+		 usuario. 
+		 Respawn = true para que se reinicie el nodo en caso de cerrarse
+		 Se utiliza xterm como terminal de comandos
+		 output = screen para que stdout y stderr se muestren por pantalla-->
 	<node pkg="interaccion" 
 		  name="interaccion_node_emocion_usuario" 
 		  type="interaccion_node_emocion_usuario" 
@@ -13,6 +26,12 @@
 		  output="screen" 
 		  launch-prefix="xterm -e"/>
 
+	<!-- Nodo interaccion_node_empaquetador perteneciente al paquete interaccion. 
+		 que se corresponde con empaquetador_nodo.cpp donde se junta toda la informacion
+		 introducida por el usuario y se envia al nodo de dialogo. 
+		 Respawn = true para que se reinicie el nodo en caso de cerrarse
+		 Se utiliza xterm como terminal de comandos
+		 output = screen para que stdout y stderr se muestren por pantalla-->
 	<node pkg="interaccion" 
 		  name="interaccion_node_empaquetador" 
 		  type="interaccion_node_empaquetador" 
@@ -20,6 +39,12 @@
 		  output="screen" 
 		  launch-prefix="xterm -e"/>
 
+	<!-- Nodo interaccion_node_posicion_usuario perteneciente al paquete interaccion. 
+		 que se corresponde con posicion_usuario_nodo.cpp donde se introduce la posicion
+		 del usuario. 
+		 Respawn = true para que se reinicie el nodo en caso de cerrarse
+		 Se utiliza xterm como terminal de comandos
+		 output = screen para que stdout y stderr se muestren por pantalla-->
 	<node pkg="interaccion" 
 		  name="interaccion_node_posicion_usuario" 
 		  type="interaccion_node_posicion_usuario" 
@@ -27,12 +52,23 @@
 		  output="screen" 
 		  launch-prefix="xterm -e"/>
 
+	<!-- Nodo interaccion_node_dialogo perteneciente al paquete interaccion. 
+		 que se corresponde con dialogo_nodo.cpp donde se muestra la informacion
+		 procedente del empaquetador. 
+		 Respawn = true para que se reinicie el nodo en caso de cerrarse
+		 output = screen para que stdout y stderr se muestren por pantalla-->
 	<node pkg="interaccion" 
 		  name="interaccion_node_dialogo" 
 		  type="interaccion_node_dialogo" 
 		  respawn="true" 
 		  output="screen"/>
 
+	<!-- Nodo interaccion_node_matematico perteneciente al paquete interaccion. 
+		 que se corresponde con matematico_nodo.cpp donde se multiplica por dos
+		 la edad introducida por el usuario. 
+		 Respawn = true para que se reinicie el nodo en caso de cerrarse
+		 Se utiliza xterm como terminal de comandos
+		 output = screen para que stdout y stderr se muestren por pantalla-->
 	<node pkg="interaccion" 
 		  name="interaccion_node_matematico" 
 		  type="interaccion_node_matematico" 
@@ -40,6 +76,12 @@
 		  output="screen" 
 		  launch-prefix="xterm -e"/>
 
+	<!-- Nodo interaccion_node_reloj perteneciente al paquete interaccion. 
+		 que se corresponde con reloj_nodo.cpp donde se implementan timers y
+		 se muestra la hora a una frecuencia establecidas.
+		 Respawn = true para que se reinicie el nodo en caso de cerrarse
+		 Se utiliza xterm como terminal de comandos
+		 output = screen para que stdout y stderr se muestren por pantalla-->
 	<node pkg="interaccion" 
 		  name="interaccion_node_reloj" 
 		  type="interaccion_node_reloj" 
